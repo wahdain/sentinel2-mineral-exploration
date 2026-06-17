@@ -1,4 +1,5 @@
-Sentinel‑2 Mineral Exploration Pipeline
+## Sentinel‑2 Mineral Exploration Pipeline
+
 
 Automated detection of iron‑oxide (gossans) and hydrothermal clay alteration
 zones from Sentinel‑2 Level‑2A imagery. Uses unsupervised K‑Means clustering
@@ -6,7 +7,7 @@ to group spectral‑lithological units and extracts georeferenced vector targets
 ready for field validation.
 
 
-Core mineral indices (computed pixel‑wise after BOA reflectance conversion):
+### Core mineral indices (computed pixel‑wise after BOA reflectance conversion):
 
   Iron Oxide Index  = Red (B04) / Blue (B02)
   → Highlights ferric iron minerals associated with oxidation and weathering.
@@ -18,7 +19,7 @@ Core mineral indices (computed pixel‑wise after BOA reflectance conversion):
   are discarded to avoid false anomalies from lush cover.
 
 
-Processing workflow (12 stages, fully automated):
+### Processing workflow (12 stages, fully automated):
 
 1. Scans the SAFE folder and dynamically finds all required band files.
 
@@ -61,7 +62,7 @@ Processing workflow (12 stages, fully automated):
     with polygon pop‑ups and satellite basemap.
 
 
-Input requirements:
+### Input requirements:
 
   A Sentinel‑2 L2A SAFE product containing:
   
@@ -72,7 +73,7 @@ Input requirements:
   The script uses flexible pattern matching – no renaming needed.
 
 
-Output files (written to the current working directory):
+### Output files (written to the current working directory):
 
   geology_map.tif                  – cluster classification (uint8)
   
@@ -93,7 +94,7 @@ Output files (written to the current working directory):
   interactive_target_map.html      – Leaflet map for field navigation
 
 
-Key user‑configurable parameters (set at the top of the script):
+### Key user‑configurable parameters (set at the top of the script):
 
   BASE_DIR                  path to your GRANULE/L2A_* folder
   
@@ -114,7 +115,7 @@ Key user‑configurable parameters (set at the top of the script):
   BOA_OFFSET                Sentinel‑2 offset (default 1000)
 
 
-Installation and execution:
+### Installation and execution:
 
   Install dependencies:
     pip install numpy rasterio scipy scikit‑learn matplotlib pandas pyproj folium shapely
